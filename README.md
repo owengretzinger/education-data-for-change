@@ -1,4 +1,3 @@
-# DeltaHacks
+# README
 
-wahoo
- 
+
