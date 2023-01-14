@@ -6,6 +6,14 @@
 
 `firebase deploy`
 
+## running locally
+
+install serve if you haven't already
+
+`npm install -g serve`
+
+run `serve -s build` in the delta-hacks-front-end folder after building
+
 ## setup steps used
 
 
