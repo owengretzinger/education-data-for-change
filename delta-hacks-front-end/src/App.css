@@ -2,8 +2,9 @@ html,
 body {
 	height: 100%;
 	width: 100%;
-	padding: 0px;
-	margin: 0px;
+	/* padding: 0px; */
+	margin: auto;
+	overflow: scroll;
 }
 
 body {
@@ -15,10 +16,10 @@ body {
 	display: flex;
 	justify-content: space-between;
 	padding: 16px;
-	background: darkslateblue;
+	background: rgb(36, 30, 73);
 }
 
-h1 {
+.header h1 {
 	margin: 0px;
 	color: white;
 }
@@ -42,11 +43,12 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: darkslateblue;
+	background: rgb(36, 30, 73);
 	color: white;
-	padding: 16px;
+	/* padding: 16px; */
 	margin-top: auto;
 	font-size: 12px;
+	height: 40px;
 }
 
 #root {
@@ -69,7 +71,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 3% 0%;
+	margin: 1rem 0rem;
 }
 
 .school-name button {
@@ -77,14 +79,14 @@ a {
 }
 
 .quote .text {
-	color: darkslateblue;
+	color: rgb(36, 30, 73);
 	margin: 0px;
 	font-style: italic;
 }
 
 .quote .author,
 .quote a {
-	color: darkslateblue;
+	color: rgb(36, 30, 73);
 	margin: 0px;
 	font-weight: bold;
 	align-self: flex-end;
@@ -97,6 +99,23 @@ a {
 	padding: 3% 15%;
 	margin: 3% 0%;
 	background-color: #efefef;
+}
+
+/* Intro */
+
+.intro {
+	background-color: rgb(26, 21, 59);
+	width: 100%;
+	/* padding: 3rem; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.intro h1 {
+	font-size: 4rem;
+	text-align: center;
 }
 
 /* Carousel */
@@ -149,10 +168,6 @@ a {
 	justify-content: center;
 	align-items: center;
 	font-size: 100px;
-}
-
-.slides>div:target {
-	/*   transform: scale(0.8); */
 }
 
 .author-info {

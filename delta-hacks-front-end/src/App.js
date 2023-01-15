@@ -14,6 +14,10 @@ function App() {
             <Header />
             <div className="middle">
                 {/* Introduction */}
+                <div className="intro">
+                    <h1>We are Education Data for Change</h1>
+                    <p>We believe every student should have quality education available independent of where they are located in Ontario. We provide the tools to analyze the schools of Ontario through <a href="https://data.ontario.ca/en/dataset">Ontario's public datasets</a>.</p>
+                </div>
                 <div className="quote">
                     <p className="text">"Ontario is committed to the success and well-being of every student and child.
                         Learners in the province's education system will develop the knowledge, skills
@@ -31,6 +35,7 @@ function App() {
                 </div>
 
                 {/* Map View */}
+
 
                 {/* School Stats */}
                 <div class="slider">
