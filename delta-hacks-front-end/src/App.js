@@ -1,10 +1,16 @@
 import './App.css';
+import Header from "./sections/Header.js"
+import Footer from "./sections/Footer.js"
 
 function App() {
   return (
-    <div>
-      <h1>Woo</h1>
-    </div>
+    <>
+      <Header />
+      <div className="middle">
+        <p>aaa</p>
+      </div>
+      <Footer />
+    </>
   );
 }
 
