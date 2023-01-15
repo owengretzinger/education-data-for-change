@@ -13,6 +13,7 @@ function App() {
         <>
             <Header />
             <div className="middle">
+                {/* Introduction */}
                 <div className="quote">
                     <p className="text">"Ontario is committed to the success and well-being of every student and child.
                         Learners in the province's education system will develop the knowledge, skills
@@ -20,8 +21,36 @@ function App() {
                         productive and actively engaged citizens." </p>
                     <p className="author">- <a href="http://ncee.org/wp-content/uploads/2017/01/Ont-non-AV-10-Ontario-Government-Achieving-Excellence-A-renewed-vision-for-education-in-Ontario.pdf">Achieving Excellence: A Renewed Vision for Education in Ontario</a></p>
                 </div>
+
+                {/* Search School */}
                 <div className="school-name">
-                    School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Go!" />
+                    School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" />
+                    <div>
+                        {/* Display Stuff About School */}
+                    </div>
+                </div>
+
+                {/* Map View */}
+
+                {/* School Stats */}
+                <div class="slider">
+                    <div class="slides">
+                        <div>
+                            1
+                        </div>
+                        <div>
+                            2
+                        </div>
+                        <div>
+                            3
+                        </div>
+                        <div>
+                            4
+                        </div>
+                        <div>
+                            5
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />

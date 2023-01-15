@@ -14,7 +14,7 @@ const QueryItem = (props) => {
     return (
         <>
             <input type="text" value={query} onChange={handleChangeQuery} />
-            <button onClick={handleSubmitQuery}>{props.buttonMessage}</button>
+            <button onClick={handleSubmitQuery}>{props.buttonName}</button>
         </>
     );
 };
