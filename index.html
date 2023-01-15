@@ -37,8 +37,8 @@
         <div class="flex flex-col w-full">
             <div class="pad flex card bg-base-300 rounded-box place-items-center" id="start-here">
                 <h1 class="bot-pad text-3xl font-bold">1. Enter School</h1>
-                <div class="text-lg" style="margin-bottom: 1em;">find average EQAO passing rate for your school</div>
-                <div class="form-control" style="margin-bottom: 4em;">
+                <div class="text-lg" style="margin-bottom: 1em;">Find average EQAO provincial standard achievement rate for your school</div>
+                <div class="form-control">
                     <div class="input-group">
                         <input id="city-input" type="text" placeholder="Enter a city..." class="input input-bordered"
                             value="Hess Street Junior Public School" />
@@ -51,7 +51,7 @@
                         </button>
                     </div>
                 </div>
-                
+                <div class="text-sm">The biggest determining factor for the percentage of students in a school who achieve the provincial standard for EQAO, is the percentage of students in low-income households for that school.</div>
             </div>
             <div class="divider"></div>
             <div class="pad flex card bg-base-300 rounded-box place-items-center">
@@ -92,7 +92,39 @@
             <div class="divider"></div>
             <div class="pad flex card bg-base-300 rounded-box place-items-center">
                 <h1 class="bot-pad text-3xl font-bold">4. Analyze graphs</h1>
-                <img src="https://mathproject.ca/wp-content/uploads/2021/05/image2-800x326.png" alt="graph">
+
+                <div style="padding: 0 10em;">
+                <div class="carousel w-full">
+                    <div id="slide1" class="carousel-item relative w-full">
+                      <img src="media/best_worst_EQAO.png" class="w-full" />
+                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" class="btn btn-circle">❮</a> 
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                      </div>
+                    </div> 
+                    <div id="slide2" class="carousel-item relative w-full">
+                      <img src="media/highest_gifted_percent.png" class="w-full" />
+                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle">❮</a> 
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                      </div>
+                    </div> 
+                    <div id="slide3" class="carousel-item relative w-full">
+                      <img src="media/suspension_rate_over_time.png" class="w-full" />
+                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle">❮</a> 
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                      </div>
+                    </div> 
+                    <div id="slide4" class="carousel-item relative w-full">
+                      <img src="media/low_income.png" class="w-full" />
+                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle">❮</a> 
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="divider"></div>
             <div class="pad flex card bg-base-300 rounded-box place-items-center">
