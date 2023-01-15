@@ -1,5 +1,5 @@
 const Header = () => {
-    const projectName = "Project Name";
+    const projectName = "Education for Change";
 
     return (
         <div className="header">
