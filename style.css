@@ -28,3 +28,12 @@ body {
 .bot-pad {
     padding-bottom: 3vh;
 }
+
+#schoolCirc, #cityCirc, #ontarioCirc {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#schoolCircInc, #cityCircInc, #ontarioCircInc {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
