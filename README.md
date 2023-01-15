@@ -1,21 +1,19 @@
-# README
+# DeltaHacks IX Project
 
-## build instructions
+## Build instructions
 
-`npm run build` in the delta-hacks-front-end folder
+Run `npm install` if just recently cloned since `.gitignore` ignores `/node_modules`.
 
-## running locally
+Do `npm start` or `npm run build` in `/delta-hacks-front-end` to run locally.
 
-install serve if you haven't already
+## Running as a local server
 
-`npm install -g serve`
+Install *serve* if you haven't already: `npm install -g serve`.
 
-run `serve -s build` in the delta-hacks-front-end folder after building
+Run `serve -s build` in `/delta-hacks-front-end` after building.
 
-## info
+## Info
 
-template created with
+Template created with `npx create-react-app delta-hacks-front-end`.
 
-`npx create-react-app delta-hacks-front-end`
-
-site hosted with [render](render.com)
+Site hosted with [Render](https://www.render.com).
