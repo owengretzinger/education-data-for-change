@@ -32,10 +32,37 @@ function App() {
                 <div className="school-name" id="#lookup">
                     <h1>Query a School</h1>
                     <div>
-                        School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" />
+                        <div className="query-box"><p>Board name:</p><QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" /></div>
+                        <div className="query-box"><p>School name:</p><QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" /></div>
+                        <div className="query-box"><p>City:</p><QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" /></div>
                     </div>
                     <div>
-                        {retrievedData.map()}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Board Name</th>
+                                    <th>School Name</th>
+                                    <th>City</th>
+                                    <th>Percentage of Grade 3 Students Achieving the Provincial Standard in Reading</th>
+                                    <th>Percentage of Grade 3 Students Achieving the Provincial Standard in Writing</th>
+                                    <th>Percentage of Grade 3 Students Achieving the Provincial Standard in Mathematics</th>
+                                    <th>Percentage of Grade 6 Students Achieving the Provincial Standard in Reading</th>
+                                    <th>Percentage of Grade 6 Students Achieving the Provincial Standard in Writing</th>
+                                    <th>Percentage of Grade 6 Students Achieving the Provincial Standard in Mathematics</th>
+                                    <th>Percentage of Grade 9 Students Achieving the Provincial Standard in Academic Mathematics</th>
+                                    <th>Percentage of Grade 9 Students Achieving the Provincial Standard in Applied Mathematics</th>
+                                    <th>Percentage of Students That Passed the Grade 10 OSSLT on Their First Attempt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                </tr>
+                                <tr>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

@@ -12,10 +12,10 @@ const QueryItem = (props) => {
     };
 
     return (
-        <>
+        <div>
             <input type="text" value={query} onChange={handleChangeQuery} />
             <button onClick={handleSubmitQuery}>{props.buttonName}</button>
-        </>
+        </div>
     );
 };
 
