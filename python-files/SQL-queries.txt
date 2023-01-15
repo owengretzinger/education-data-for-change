@@ -1,0 +1,20 @@
+//select `School Name`, `Percentage of Students Identified as Gifted`
+//from education.scores
+//where Year = 2021
+//order by `Percentage of Students Identified as Gifted` desc
+//limit 5;
+
+//SELECT `School Name`, round((`Percentage of Grade 3 Students Achieving the Provincial Standard in Reading` + `Percentage of Grade 3 Students Achieving the Provincial Standard in Writing` + `Percentage of Grade 3 Students Achieving the Provincial Standard in Mathematics` + `Percentage of Grade 6 Students Achieving the Provincial Standard in Reading` + `Percentage of Grade 6 Students Achieving the Provincial Standard in Writing` + `Percentage of Grade 6 Students Achieving the Provincial Standard in Mathematics`) / 6,2) AS average
+//FROM education.scores
+//where average is not NAN
+//    and average is not null
+//    and Year = 2021
+//order by average desc
+//limit 5;
+
+
+SELECT (100 - `Percentage of School-Aged Children Who Live in Low-Income Households`), `Percentage of Grade 3 Students Achieving the Provincial Standard in Reading`
+from education.scores
+where Year = 2021
+    and `Percentage of Grade 3 Students Achieving the Provincial Standard in Reading` is not NAN
+    and `Percentage of School-Aged Children Who Live in Low-Income Households` is not NAN;
