@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Education Data for Change</title>
+</head>
+
+<body>
+    <div class="navbar bg-base-100">
+        <a class="btn btn-ghost normal-case text-xl" href="./index.html">Education Data for Change</a>
+    </div>
+
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <img src="https://www.responsiveclassroom.org/wp-content/uploads/2016/04/DSC_2388-1024x682.jpg"
+                class="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+                <h1 class="text-5xl font-bold">Change Education with Data!</h1>
+                <p class="py-6">Students in Ontario should be given an equal education independent of their location
+                    based on the Ontario School Board's mission. Education Data for Change lets you see if there should
+                    be change for your region.</p>
+                <button class="btn btn-primary"><a href="#start-here">Get Started</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="flex flex-col w-full">
+            <div class="pad flex card bg-base-300 rounded-box place-items-center" id="start-here">
+                <h1 class="bot-pad text-3xl font-bold">1. Enter desired city</h1>
+                <div class="form-control">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter a city..." class="input input-bordered"
+                            value="Hamilton" />
+                        <button class="btn btn-square">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="pad flex card bg-base-300 rounded-box place-items-center">
+                <h1 class="bot-pad text-3xl font-bold">2. Consider results</h1>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>School</th>
+                                <th>EQAO</th>
+                                <th>OSSLT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>Dalewood Middle School</td>
+                                <td>Good</td>
+                                <td>N/A</td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                                <th>2</th>
+                                <td>Westdale Secondary School</td>
+                                <td>Good</td>
+                                <td>Great</td>
+                            </tr>
+                            <!-- row 3 -->
+                            <tr>
+                                <th>3</th>
+                                <td>St. Mary's Catholic School</td>
+                                <td>Great</td>
+                                <td>Great</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="pad flex card bg-base-300 rounded-box place-items-center">
+                <h1 class="bot-pad text-3xl font-bold">3. Analyze map</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d93009.84273573723!2d-79.93706175321194!3d43.23973461920039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sschools%20in%20hamilton!5e0!3m2!1sen!2sca!4v1673782216279!5m2!1sen!2sca"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="divider"></div>
+            <div class="pad flex card bg-base-300 rounded-box place-items-center">
+                <h1 class="bot-pad text-3xl font-bold">4. Analyze graphs</h1>
+                <img src="https://mathproject.ca/wp-content/uploads/2021/05/image2-800x326.png" alt="graph">
+            </div>
+            <div class="divider"></div>
+            <div class="pad flex card bg-base-300 rounded-box place-items-center">
+                <h1 class="bot-pad text-3xl font-bold">5. Unhappy?</h1>
+                <p>Contact the school board of <strong>Hamilton</strong> at <em><a href="aa">this link</a></em>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <div>
+            <p>Made by: Owen Gretzinger, James Nickoli, Geon Youn for DeltaHacksIX</p>
+        </div>
+    </footer>
+</body>
+
+</html>

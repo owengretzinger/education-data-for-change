@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh 0;
+}
+
+.middle>div {
+    width: 95%;
+}
+
+.pad {
+    padding: 3vh;
+}
+
+.bot-pad {
+    padding-bottom: 3vh;
+}
