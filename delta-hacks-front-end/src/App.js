@@ -3,6 +3,8 @@ import Header from "./sections/Header.js";
 import Footer from "./sections/Footer.js";
 import QueryItem from "./elements/QueryItem.js";
 
+let retrievedData;
+
 function App() {
     // Make users be able to search schools by 
     const onSubmitQuery = (query) => {
@@ -27,19 +29,24 @@ function App() {
                 </div>
 
                 {/* Search School */}
-                <div className="school-name">
-                    School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" />
+                <div className="school-name" id="#lookup">
+                    <h1>Query a School</h1>
                     <div>
-                        {/* Display Stuff About School */}
+                        School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Search" />
+                    </div>
+                    <div>
+                        {retrievedData.map()}
                     </div>
                 </div>
 
                 {/* Map View */}
+                <div id="#maps">
 
+                </div>
 
                 {/* School Stats */}
-                <div class="slider">
-                    <div class="slides">
+                <div className="slider" id="#graphs">
+                    <div className="slides">
                         <div>
                             1
                         </div>
