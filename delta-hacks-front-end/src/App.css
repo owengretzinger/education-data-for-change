@@ -58,3 +58,12 @@ a {
 .middle {
 	flex: auto;
 }
+
+.school-name {
+	display: flex;
+
+}
+
+.school-name button {
+	width: 60px;
+}
