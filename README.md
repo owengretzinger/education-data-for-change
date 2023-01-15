@@ -1,6 +1,6 @@
 # DeltaHacks IX Project: Education Data for Change
 
-[Devpost]()
+[Devpost](https://devpost.com/software/education-data-for-change)
 
 [GitHub Pages](https://owengretzinger.github.io/education-data-for-change/)
 
