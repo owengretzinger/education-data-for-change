@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div class="footer">
+        <div className="footer">
             Copyright © Owen Gretzinger, James Nickoli, Geon Youn
         </div>
     );

@@ -5,13 +5,16 @@ import QueryItem from "./elements/QueryItem.js";
 
 function App() {
     // Make users be able to search schools by 
+    const onSubmitQuery = (query) => {
+        console.log(`SELECT * FROM ____ WHERE school LIKE "\%${query}\%"`);
+    }; 
 
     return (
         <>
             <Header />
             <div className="middle">
-                <div>
-                    <QueryItem />
+                <div className="school-name">
+                    School name: <QueryItem onSubmitQuery={onSubmitQuery} buttonName="Go!"/>
                 </div>
             </div>
             <Footer />

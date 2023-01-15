@@ -61,7 +61,7 @@ a {
 
 .school-name {
 	display: flex;
-
+	gap: 4px;
 }
 
 .school-name button {
