@@ -1,144 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="./style.css">
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.46.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Education Data for Change</title>
-</head>
+  </head>
 
-<body>
-    <div class="navbar bg-base-100">
-        <a class="btn btn-ghost normal-case text-xl" href="./index.html">Education Data for Change</a>
+  <!-- graphs -->
+  <input type="checkbox" id="graphs-modal" class="modal-toggle" />
+  <label for="graphs-modal" class="modal cursor-pointer">
+    <label class="modal-box relative w-full max-w-xl" for="">
+      <div class="pad flex card rounded-box place-items-center">
+        <h1 class="bot-pad text-3xl font-bold">Graphs</h1>
+        <p class="pb-6"><em>Relevant or interesting graphs.</em></p>
+        <div class="carousel w-full">
+          <div id="item1" class="carousel-item w-full">
+            <div class="card card-compact w-full shadow-xl">
+              <figure><img src="media/best_worst_EQAO.png" class="w-full" /></figure>
+              <div>
+                <p class="py-2"><em>
+                  Relevant
+                </em></p>
+                <p class="pb-2">
+                  This graph shows the striking difference between the lowest and highest scoring schools.
+                </p>
+              </div>
+            </div>
+          </div> 
+          <div id="item2" class="carousel-item w-full">
+            <div class="card card-compact w-full shadow-xl">
+              <figure><img src="media/low_income.png" class="w-full" /></figure>
+              <div>
+                <p class="py-2"><em>
+                  Relevant
+                </em></p>
+                <p class="pb-2">
+                  This graph shows how household income is related to average EQAO scores.
+                </p>
+              </div>
+            </div>
+          </div> 
+          <div id="item3" class="carousel-item w-full">
+            <div class="card card-compact w-full shadow-xl">
+              <figure><img src="media/highest_gifted_percent.png" class="w-full" /></figure>
+              <div>
+                <p class="py-2"><em>
+                  Interesting
+                </em></p>
+                <p class="pb-2">
+                  This graph shows which schools have the most students identified as gifted.
+                </p>
+              </div>
+            </div>
+          </div> 
+          <div id="item4" class="carousel-item w-full">
+            <div class="card card-compact w-full shadow-xl">
+              <figure><img src="media/suspension_rate_over_time.png" class="w-full" /></figure>
+              <div>
+                <p class="py-2"><em>
+                  Interesting
+                </em></p>
+                <p class="pb-2">
+                  This graph shows the average suspension rate across all schools over time.
+                </p>
+              </div>
+            </div>
+          </div> 
+        </div> 
+        <div class="flex justify-center w-full py-2 gap-2">
+          <a href="#item1" class="btn btn-xs">1</a> 
+          <a href="#item2" class="btn btn-xs">2</a> 
+          <a href="#item3" class="btn btn-xs">3</a> 
+          <a href="#item4" class="btn btn-xs">4</a>
+        </div>
+      </div>
+    </label>
+  </label>
+
+  <!-- map -->
+  <input type="checkbox" id="map-modal" class="modal-toggle" />
+  <label for="map-modal" class="modal cursor-pointer">
+    <label class="modal-box relative w-11/12 max-w-5xl" for="">
+      <div class="pad flex card rounded-box place-items-center">
+        <h1 class="bot-pad text-3xl font-bold">Map</h1>
+        <p class="pb-6"><em>Look at schools on a map.</em></p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d93009.84273573723!2d-79.93706175321194!3d43.23973461920039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sschools%20in%20hamilton!5e0!3m2!1sen!2sca!4v1673782216279!5m2!1sen!2sca"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </label>
+  </label>
+
+  <body id="top">
+    <div class="navbar bg-base-100 fixed z-50">
+      <div class="flex-1">
+        <a id="home-button" class="btn btn-ghost normal-case text-xl">Education Data for Change</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <label id="about-button" class="btn btn-ghost normal-case">About</label>
+          <label for="graphs-modal" class="btn btn-ghost normal-case">Graphs</label>
+          <label for="map-modal" class="btn btn-ghost normal-case">Map</label>
+        </ul>
+      </div>
+    </div>
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content flex-col lg:flex-row-reverse text-center">
+        <div>
+          <img class="m-auto margin -mb-7 w-[300px] max-w-full" src="media/logo.png" />
+          <h1 class="text-5xl font-bold">Education Data for Change</h1>
+          <p class="py-6">
+            <em
+              >Students in Ontario should be given an equal education
+              independent of their location based on the Ontario School Board's
+              mission.</em
+            >
+          </p>
+          <p class="pb-6"><em>Should there be a change in your region?</em></p>
+          <a id="start-button"><button class="btn btn-primary">Get Started</button></a>
+        </div>
+      </div>
     </div>
 
-    <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-            <img src="https://www.responsiveclassroom.org/wp-content/uploads/2016/04/DSC_2388-1024x682.jpg"
-                class="max-w-sm rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-5xl font-bold">Change Education with Data!</h1>
-                <p class="py-6">Students in Ontario should be given an equal education independent of their location
-                    based on the Ontario School Board's mission. Education Data for Change lets you see if there should
-                    be change for your region.</p>
-                <button class="btn btn-primary"><a href="#start-here">Get Started</a></button>
-            </div>
-        </div>
+    <div style="position: relative">
+      <div
+        id="start-here"
+        style="position: absolute; top: -120px; left: 0"
+      ></div>
     </div>
 
     <div class="middle">
-        <div class="flex flex-col w-full">
-            <div class="pad flex card bg-base-300 rounded-box place-items-center" id="start-here">
-                <h1 class="bot-pad text-3xl font-bold">1. Enter School</h1>
-                <div class="text-lg" style="margin-bottom: 1em;">Find average EQAO provincial standard achievement rate for your school</div>
-                <div class="form-control">
-                    <div class="input-group">
-                        <input id="city-input" type="text" placeholder="Enter a school..." class="input input-bordered"
-                            value="Hess Street Junior Public School" />
-                        <button class="btn btn-square">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="text-sm">The biggest determining factor for the percentage of students in a school who achieve the provincial standard for EQAO, is the percentage of students in low-income households for that school.</div>
-            </div>
-            <div class="divider"></div>
-            <div class="pad flex card bg-base-300 rounded-box place-items-center">
-                <h1 class="bot-pad text-3xl font-bold">2. Consider results</h1>
-                <div class="text-xl" id="schoolResult">Hess Street Junior Public School</div>
-                <div class="text-lg" id="cityResult">Hamilton</div>
-                <div class="flex w-full" style="padding:1em;padding-bottom: 2em;height: 20em;">
-                    <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">
-                        <span class="text-sm">School Average:</span>
-                        <div class="radial-progress" id="schoolCirc" style="--value:47;">46.9%</div>
-                        <span class="text-sm">School students in above low-income households:</span>
-                        <div class="radial-progress" id="schoolCircInc" style="--value:45;">45.0%</div>
-                    </div>
-                    <div class="divider divider-horizontal"></div>
-                    <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">
-                        <span class="text-sm">City Average:</span>
-                        <div class="radial-progress" id="cityCirc" style="--value:59;">59.3%</div>
-                        <span class="text-sm">City students in above low-income households:</span>
-                        <div class="radial-progress" id="cityCircInc" style="--value:73;">73.1%</div>
-                    </div>
-                    <div class="divider divider-horizontal"></div>
-                    <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">
-                        <span class="text-sm">Ontario Average:</span>
-                        <div class="radial-progress" id="ontarioCirc" style="--value:67;">67.3%</div>
-                        <span class="text-sm">Ontario students in above low-income households:</span>
-                        <div class="radial-progress" id="ontarioCircInc" style="--value:82;">81.7%</div>
-                    </div>
-                  </div>
-            </div>
-            <div class="divider"></div>
-            <div class="pad flex card bg-base-300 rounded-box place-items-center">
-                <h1 class="bot-pad text-3xl font-bold">3. Analyze map</h1>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d93009.84273573723!2d-79.93706175321194!3d43.23973461920039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sschools%20in%20hamilton!5e0!3m2!1sen!2sca!4v1673782216279!5m2!1sen!2sca"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="divider"></div>
-            <div class="pad flex card bg-base-300 rounded-box place-items-center">
-                <h1 class="bot-pad text-3xl font-bold">4. Analyze graphs</h1>
-
-                <div style="padding: 0 10em;">
-                <div class="carousel w-full" style="border-radius: 1em">
-                    <div id="slide1" class="carousel-item relative w-full">
-                      <img src="media/best_worst_EQAO.png" class="w-full" />
-                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" class="btn btn-circle">❮</a> 
-                        <a href="#slide2" class="btn btn-circle">❯</a>
-                      </div>
-                    </div> 
-                    <div id="slide2" class="carousel-item relative w-full">
-                      <img src="media/highest_gifted_percent.png" class="w-full" />
-                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" class="btn btn-circle">❮</a> 
-                        <a href="#slide3" class="btn btn-circle">❯</a>
-                      </div>
-                    </div> 
-                    <div id="slide3" class="carousel-item relative w-full">
-                      <img src="media/suspension_rate_over_time.png" class="w-full" />
-                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" class="btn btn-circle">❮</a> 
-                        <a href="#slide4" class="btn btn-circle">❯</a>
-                      </div>
-                    </div> 
-                    <div id="slide4" class="carousel-item relative w-full">
-                      <img src="media/low_income.png" class="w-full" />
-                      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" class="btn btn-circle">❮</a> 
-                        <a href="#slide1" class="btn btn-circle">❯</a>
-                      </div>
-                    </div>
-                  </div>
+      <div class="flex flex-col w-full">
+        <div class="pad flex card bg-base-300 rounded-box place-items-center">
+          <h1 class="bot-pad text-3xl font-bold">1. Enter School</h1>
+          <p class="pb-6"><em>Public Ontario schools only.</em></p>
+          <p class="pb-6"><em>Try entering your high school or elementary school!</em></p>
+          <div id="search-dropdown" class="flex flex-col">
+            <div class="form-control">
+                <div class="input-group">
+                    <input
+                    id="city-input"
+                    type="text"
+                    placeholder="Enter a school..."
+                    class="input input-bordered"
+                    />
+                    <button id="force-search" class="btn btn-square">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                    </svg>
+                    </button>
                 </div>
             </div>
-            <div class="divider"></div>
-            <div class="pad flex card bg-base-300 rounded-box place-items-center">
-                <h1 class="bot-pad text-3xl font-bold">5. Unhappy?</h1>
-                <p>Contact the school board of <strong>Hamilton</strong> at <em><a href="https://www.hwdsb.on.ca/">this link</a></em>.</p>
+            <div id="search-results-box" class="w-full hidden">
+                <ul id="search-results" class="menu z-10 absolute p-2 shadow bg-base-100 rounded-box w-52">
+                    <div><li><a>school</a></li></div>
+                    <div><li><a>school</a></li></div>
+                    <div><li><a>school</a></li></div>
+                </ul>
             </div>
+          </div>
         </div>
+        <div class="divider"></div>
+        <div style="position: relative">
+          <div
+            id="results"
+            style="position: absolute; top: -4rem; left: 0"
+          ></div>
+        </div>
+
+        
+
+        <div class="pad flex card bg-base-300 rounded-box place-items-center">
+          <h1 class="bot-pad text-3xl font-bold">2. Consider Results</h1>
+          <p class="pb-6"><em>Data from <u><a target="_blank" href="https://data.ontario.ca/en/dataset/school-information-and-student-demographics">data.ontario.ca</a></u>.</em></p>
+          
+          <div class="card lg:card-side bg-base-100 shadow-xl  w-[700px] max-w-full">
+            <div class="card-body place-items-center">
+              
+              <div class="text-3xl" id="schoolResult">
+                School
+              </div>
+              <p class="text-lg pt-2"><a id="city-result">City, ON</a>
+                (<u><a href="" target="_blank" id="boardResult">School Board</a></u>)</p>
+
+              <div class="divider"></div>
+
+              <div class="flex w-full text-center">
+                <p id="enrolment"><strong>Unknown number of</strong><br>students enrolled in 2021</p>
+                <div id="stat-div-1" class="divider divider-horizontal" style="display:none"></div>
+                <p id="gifted" class="hidden"></p>
+                <div id="stat-div-2" class="divider divider-horizontal" style="display:none"></div>
+                <p id="special-ed" class="hidden"></p>
+              </div>
+
+              <div class="divider"></div>
+              
+              <div class="flex items-center">
+                <div class="tooltip" data-tip="Stats are averaged from 2018 to 2021">
+                  <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                  </svg>
+                </div>
+                <p>School Stats:</p>
+              </div>
+              
+
+                <div class="flex w-full">
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of EQAO grades that meet the provincial standard: Each reading, writing, and mathematics mark is a separate entry into the average for each student.">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span class="text-sm text-center">Meeting EQAO Standard:</span>
+                    </div>
+                    <div class="radial-progress" id="schoolCirc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+                  <div class="divider divider-horizontal"></div>
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of students who live in households above the low income cutoff (see About section for definition of low income household).">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span class="text-sm text-center">Above low income:</span>
+                    </div>
+                    <div class="radial-progress" id="schoolCircInc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                
+                
+
+                <div class="flex items-center">
+                  <div class="tooltip" data-tip="Stats are averaged from 2018 to 2021">
+                    <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                    </svg>
+                  </div>
+                  <p id="city-stats-header">City Stats:</p>
+                </div>
+                <div class="flex w-full">
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of EQAO grades that meet the provincial standard: Each reading, writing, and mathematics mark is a separate entry into the average for each student.">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span id="city-average-header" class="text-sm text-center">City EQAO Average:</span>
+                    </div>
+                    
+                    <div class="radial-progress" id="cityCirc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+                  <div class="divider divider-horizontal"></div>
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of students who live in households above the low income cutoff (see About section for definition of low income household).">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span class="text-sm text-center">Above low income:</span>
+                    </div>
+                    <div class="radial-progress" id="cityCircInc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider"></div> 
+
+                <div class="flex items-center">
+                  <div class="tooltip" data-tip="Stats are averaged from 2018 to 2021">
+                    <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                    </svg>
+                  </div>
+                  <p id="city-stats-header"">Ontario Stats:</p>
+                </div>
+
+                <div class="flex w-full">
+                  
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of EQAO grades that meet the provincial standard: Each reading, writing, and mathematics mark is a separate entry into the average for each student.">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span class="text-sm text-center">Ontario EQAO Average:</span>
+                    </div>
+                    <div class="radial-progress" id="ontarioCirc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+                  <div class="divider divider-horizontal"></div>
+                  <div class="flex-grow card rounded-box place-items-center w-1/2">
+                    <div class="flex items-center">
+                      <div class="tooltip" data-tip="Percentage of students who live in households above the low income cutoff (see About section for definition of low income household).">
+                        <svg class="w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                        </svg>
+                      </div>
+                      <span class="text-sm text-center">Above low income:</span>
+                    </div>
+                    <div class="radial-progress" id="ontarioCircInc" style="--value: 100">
+                      N/A
+                    </div>
+                  </div>
+
+                </div>
+            
+
+            </div>
+          </div>
+
+        </div>
+        <div class="divider"></div>
+        <div class="pad flex card bg-base-300 rounded-box place-items-center">
+          <h1 class="bot-pad text-3xl font-bold">About</h1>
+          <div class="card lg:card-side bg-base-100 shadow-xl w-[700px] max-w-full">
+            <div class="card-body">
+              <p class="text-center">
+                This is a tool that was created to help discover insights into the Ontario education system.
+                Users are encouraged to reflect on the reason behind why some schools score higher than others,
+                and whether something should be done to support schools or cities with lower scores 
+                (such as increasing funding).
+                <br><br>
+                The data used for analysis is publically available on <u><a target="_blank" href="https://data.ontario.ca/en/dataset/school-information-and-student-demographics">data.ontario.ca</a></u>.<br>
+                More information about low income households can be found on <u><a target="_blank" href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110024101">statcan.gc.ca</a></u>.<br>
+                More information about EQAO provincial standards can be found on <u><a target="_blank" href="https://www.eqao.com/explanation-of-terms/">eqao.com</a></u>.
+                <br><br>
+                Originally developed by 
+                  <u><a target="_blank" href="https://www.linkedin.com/in/owengretzinger/">Owen Gretzinger</a></u>,
+                  <u><a target="_blank" href="https://www.linkedin.com/in/james-nickoli/">James Nickoli</a></u>,
+                  and <u><a target="_blank" href="https://www.linkedin.com/in/geon-youn/">Geon Youn</a></u>
+                  for <a href="https://deltahacks.com/" target="_blank" class="link">DeltaHacksIX</a>.
+                The hackathon submission can be found on <u><a target="_blank" href="https://devpost.com/software/education-data-for-change">Devpost</a></u>,
+                and the code for the website can be found on <u><a target="_blank" href="https://github.com/owengretzinger/education-data-for-change">GitHub</a></u>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-        <div>
-            <p>Made by: Owen Gretzinger, James Nickoli, Geon Youn for <a href="https://devpost.com/software/education-data-for-change">DeltaHacksIX</a></p>
-        </div>
+    <div class="divider"></div>
+    <footer id="about" class="footer footer-center p-4 bg-base-300 text-base-content">
+      <a id="back-to-top" class="link">Back to top</a>
     </footer>
-</body>
-
+  </body>
 </html>
