@@ -32,6 +32,7 @@ function loadData() {
             // match the headers to the data
             for (let i = 1; i < rows.length; i++) {
                 let row = rows[i].split(",");
+                
                 let score = {};
 
                 let city = row[14];
@@ -47,6 +48,7 @@ function loadData() {
 
                 for (let j = 0; j < row.length; j++) {
                     score[headers[j]] = row[j];
+                    // if (j == row.length-1) console.log(headers[j]);
                     var value = parseInt(row[j]);
 
                     if (!isNaN(value)) {
@@ -57,6 +59,7 @@ function loadData() {
                         scoreStats[city][headers[j] + "amount"]++;
 
                     }
+                    
                 }
                 scoreData.push(score);
             }
@@ -186,7 +189,7 @@ function showResults(matches, index) {
     document.getElementById("schoolResult").innerText = schoolName;
     
     for (let i of scoreData) {
-        if (i["School Name"] === schoolName) {
+        if (i["School Name"] === schoolName && i["Year"] === 2021) {
             for (let j of headers) {
                 let value = parseInt(i[j]);
                 if (!isNaN(value)) {
@@ -224,8 +227,11 @@ function showResults(matches, index) {
     let enrolment = 0;
     let gifted = 0;
     let specialEd = 0;
+    console.log(Object.keys(scoreData[0]));
     for(let i of scoreData.reverse()){
         if(i["School Name"] === schoolName){
+            
+            console.log(i["Year"]);
             cityName = i["City"];
             enrolment = i["Enrolment"];
             gifted = i["Percentage of Students Identified as Gifted"];
@@ -277,7 +283,6 @@ function showResults(matches, index) {
         
     }
 
-    console.log(totalAvg, count);
     totalAvg /= count;
     cityAvg /= cityAvgCount;
     ontarioAvg /= ontarioAvgCount;
