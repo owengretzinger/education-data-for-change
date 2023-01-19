@@ -24,6 +24,7 @@ function loadData() {
             // split the data into rows
             let rows = data.split("\n");
             headers = rows[0].split(",");
+            headers[headers.length-1] = headers[headers.length-1].replace("\r","");
 
 
 
@@ -189,7 +190,7 @@ function showResults(matches, index) {
     document.getElementById("schoolResult").innerText = schoolName;
     
     for (let i of scoreData) {
-        if (i["School Name"] === schoolName && i["Year"] === 2021) {
+        if (i["School Name"] === schoolName) {
             for (let j of headers) {
                 let value = parseInt(i[j]);
                 if (!isNaN(value)) {
@@ -227,11 +228,9 @@ function showResults(matches, index) {
     let enrolment = 0;
     let gifted = 0;
     let specialEd = 0;
-    console.log(Object.keys(scoreData[0]));
     for(let i of scoreData.reverse()){
-        if(i["School Name"] === schoolName){
-            
-            console.log(i["Year"]);
+        
+        if(i["School Name"] === schoolName && i["Year"].slice(0, 4) == "2021"){
             cityName = i["City"];
             enrolment = i["Enrolment"];
             gifted = i["Percentage of Students Identified as Gifted"];
