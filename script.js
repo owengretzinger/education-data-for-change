@@ -238,7 +238,7 @@ function showResults(matches, index) {
     document.getElementById("city-stats-header").innerText = cityName + " Stats:";
     document.getElementById("city-average-header").innerText = cityName + " EQAO Average:";
     document.getElementById("enrolment").innerHTML = "<strong>" + (!isNaN(enrolment) ? enrolment : "Unknown number of ") + "</strong><br>students enrolled in 2021";
-    if (!isNaN(gifted) && gifted !== 0) {
+    if (!isNaN(gifted) && gifted !== "0") {
         elem = document.getElementById("gifted");
         elem.innerHTML = "<strong>" + gifted + "%</strong><br>identified as gifted";
         elem.style.display = "block";
@@ -248,7 +248,7 @@ function showResults(matches, index) {
         document.getElementById("gifted").style.display = "none";
         document.getElementById("stat-div-1").style.display = "none";
     }
-    if (!isNaN(specialEd) && specialEd !== 0) {
+    if (!isNaN(specialEd) && specialEd !== "0") {
         elem = document.getElementById("special-ed");
         elem.innerHTML = "<strong>" + specialEd + "%</strong><br>receiving special education";
         elem.style.display = "block";
